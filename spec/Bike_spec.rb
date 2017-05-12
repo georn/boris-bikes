@@ -8,9 +8,10 @@ describe Bike do
     expect(subject).to respond_to :working
   end
 
-  # it "" do
-  #
-  # end
+  it "breaks" do
+    subject.breaks
+    expect(subject.working?).to eq false
+  end
 
 
 end

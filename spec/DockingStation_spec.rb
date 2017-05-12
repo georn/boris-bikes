@@ -46,10 +46,25 @@ end
 		expect(subject.capacity).to eq 20
 	end
 
-	it "can report bike as broken" do
-		bike = Bike.new
-		subject.report_broken(bike)
-		expect(bike.working).to eq false
+	it "knows that the bike is broken" do
+		subject.dock(Bike.new.breaks)
+		expect(subject.bikes_array[0].working).to eq false
 	end
+
+	it "raises an error upon release if all are broken" do
+		subject.dock(Bike.new.breaks)
+		expect{subject.release_bike}.to raise_error('All bikes broken')
+	end
+
+	it "accepts broken bikes and working bikes" do
+		expect(subject.dock(Bike.new)).to eq subject.bikes_array
+		expect(subject.dock(Bike.new.breaks)).to eq subject.bikes_array
+	end
+
+	# it "can report bike as broken" do
+	# 	bike = Bike.new
+	# 	subject.report_broken(bike)
+	# 	expect(bike.working).to eq false
+	# end
 
 end

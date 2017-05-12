@@ -13,8 +13,16 @@ end
 
 
   def release_bike
+    flag = false
     fail 'No bikes available' unless empty?
-    @bikes_array.pop
+    @bikes_array.each { |bike| flag = true if bike.working }
+    fail 'All bikes broken' unless flag
+      if @bikes_array.last.working?
+        @bikes_array.pop
+      else
+        @bikes_array.rotate!
+        release_bike
+      end
   end
 
 #allows user to dock bike

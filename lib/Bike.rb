@@ -6,7 +6,12 @@ attr_accessor :working
   end
 
   def working?
-    bike.working
+    working
+  end
+
+  def breaks
+    @working = false
+    self
   end
 
 end
