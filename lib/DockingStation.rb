@@ -31,22 +31,6 @@ end
     @bikes_array << bike
   end
 
-
-  # def report_broken(bike)
-  #   answer = ""
-  #   until (answer == "Y" || answer == "N")
-  #     puts "Is the bike working?(Y/N)"
-  #     answer = gets.chomp.upcase
-  #     if answer == "Y"
-  #       bike.working = true
-  #     elsif answer == "N"
-  #       bike.working = false
-  #     else
-  #       "Invalid input"
-  #     end
-  #   end
-  # end
-
   private
 
   def empty?
