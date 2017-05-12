@@ -2,10 +2,14 @@ require 'DockingStation'
 
 describe DockingStation do
 
+	let(:bike) {double(:bike)}
+
 	it { is_expected.to respond_to :release_bike }
+
 describe '#release_bike' do
 	it "releases a bike" do
-		bike = double(:bike)
+		allow(bike).to receive(:working?).and_return(true)
+		allow(bike).to receive(:working).and_return(true)
 		subject.dock(bike)
 		expect(subject.release_bike).to eq bike
 	end
@@ -20,10 +24,11 @@ end
 		expect(subject).to respond_to :bikes_array
 	end
 
-	it "bike is a bike" do
-		bike = double(:bike)
+	it "bike is a Bike" do
+		allow(bike).to receive(:working?).and_return(true)
+		allow(bike).to receive(:working).and_return(true)
 		subject.dock(bike)
-		expect(subject.release_bike.class).to eq bike.class
+		expect(subject.release_bike).to eq bike
 	end
 
 	it "raises error if bike unavailable" do
@@ -47,18 +52,23 @@ end
 	end
 
 	it "knows that the bike is broken" do
-		subject.dock(double(:bike).breaks)
+		allow(bike).to receive(:breaks).and_return(bike)
+		allow(bike).to receive(:working).and_return(false)
+		subject.dock(bike.breaks)
 		expect(subject.bikes_array[0].working).to eq false
 	end
 
 	it "raises an error upon release if all are broken" do
-		subject.dock(double(:bike).breaks)
+		allow(bike).to receive(:breaks).and_return(bike)
+		allow(bike).to receive(:working).and_return(false)
+		subject.dock(bike.breaks)
 		expect{subject.release_bike}.to raise_error('All bikes broken')
 	end
 
 	it "accepts broken bikes and working bikes" do
-		expect(subject.dock(double(:bike))).to eq subject.bikes_array
-		expect(subject.dock(double(:bike).breaks)).to eq subject.bikes_array
+		allow(bike).to receive(:breaks).and_return(bike)
+		expect(subject.dock(bike)).to eq subject.bikes_array
+		expect(subject.dock(bike.breaks)).to eq subject.bikes_array
 	end
 
 	# it "can report bike as broken" do
