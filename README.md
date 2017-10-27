@@ -82,5 +82,5 @@ This amazing people collaborated to the code, but by that time I wasn't a good g
 
 - [Michael Jacobson](https://github.com/michaelbjacobson)
 - [Collin Scally](https://github.com/cdscally)
-- [Toby](https://github.com/tobywinter)
+- [Toby Hasler-Winter](https://github.com/tobywinter)
 - [Andrew Clarke](https://github.com/Dino982)
