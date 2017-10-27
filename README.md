@@ -1,4 +1,4 @@
-# Boris Bikes
+# Boris Bikes [![Build Status](https://travis-ci.org/georn/boris-bikes.svg?branch=CI-integration)](https://travis-ci.org/georn/boris-bikes) [![Coverage Status](https://coveralls.io/repos/github/georn/boris-bikes/badge.svg?branch=CI-integration)](https://coveralls.io/github/georn/boris-bikes?branch=CI-integration)
 **Week 1 Challenge at Makers Academy**
 
 This is an program that emulates the Boris Bikes (Santander Cycles) system in London.
