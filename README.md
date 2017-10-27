@@ -1,4 +1,4 @@
-# Boris Bikes Application
+# Boris Bikes
 **Week 1 Challenge at Makers Academy**
 
 This is an program that emulates the Boris Bikes (Santander Cycles) system in London.
@@ -75,3 +75,12 @@ User Stories task list
 - [ ] Bike can be report as broken
 - [x] Docking Station do not release broken bikes
 - [x] Docking Station docks broken bikes
+
+## Collaborators
+
+This amazing people collaborated to the code, but by that time I wasn't a good git collaborator. Thus here are some credits.
+
+- [Michael Jacobson](https://github.com/michaelbjacobson)
+- [Collin Scally](https://github.com/cdscally)
+- [Toby](https://github.com/tobywinter)
+- [Andrew Clarke](https://github.com/Dino982)

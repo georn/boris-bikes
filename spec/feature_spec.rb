@@ -1,3 +1,0 @@
-require './lib/DockingStation'
-
-# TESTS
